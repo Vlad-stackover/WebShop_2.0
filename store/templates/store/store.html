@@ -1,0 +1,46 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+
+
+<form class="d-flex" id="poisk" method="GET" action="{% url 'store' %}">
+    {% csrf_token %}
+	<input class="form-control me-2" type="text" name="search" placeholder="Search by name" value="{{ search_query }}">
+    <label id="price" for="min_price">Min Price:</label> 
+    <input class="form-control me-2" placeholder="0" type="number" id="min_price" name="min_price" value="{{ request.GET.min_price }}">
+	<h6 id="right">ZŁ</h6>
+    <label id="price" for="max_price">Max Price:</label> 
+    <input class="form-control me-2" placeholder="9999" type="number" id="max_price" name="max_price" value="{{ request.GET.max_price }}"> 
+	<h6 id="right">ZŁ</h6>
+    <button class="btn btn-outline-secondary" id="knopka" type="submit">Search</button>
+</form>
+
+<div class="row">
+	{% for product in products %}
+	<div class="col-lg-4">
+		<img class="thumbnail" src="{{ product.imageURL }}">
+		<div class="box-element product">
+			<h6><strong>{{ product.name }}</strong></h6>
+			<hr>
+
+			<button data-product="{{ product.id }}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+
+			<a class="btn btn-outline-success" href="{% url 'view' %}">View</a>
+			<h4 style="display: inline-block; float: right"><strong>{{ product.price }} zł</strong></h4>
+		</div>
+	</div>
+	{% endfor %}
+</div>
+
+<div class="pagination">
+	{% if products.has_previous %}
+	<a href="?page={{ products.previous_page_number }}{% if search_query %}&search={{ search_query }}{% endif %}">Previous</a>
+	{% endif %}
+
+
+	{% if products.has_next %}
+	<a href="?page={{ products.next_page_number }}{% if search_query %}&search={{ search_query }}{% endif %}">Next</a>
+	{% endif %}
+</div>
+
+{% endblock content %}

@@ -1,0 +1,21 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+
+{% csrf_token %}
+<form method="get" action="{% url 'search' %}">
+    {{ form.as_p }}
+    <input type="submit" value="Search">
+</form>
+
+{% if results %}
+    <h3>Search Results:</h3>
+    <ul>
+        {% for product in results %}
+            <li>{{ product.title }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+
+{% endblock content %}

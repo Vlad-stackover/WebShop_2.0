@@ -1,0 +1,39 @@
+{% extends 'store/main.html' %}
+{% block content %}
+
+<style>
+    .all {
+      display: flex;
+      justify-content: center;
+    }
+</style>
+
+<div class='all'>
+    <p><div class="header-bar">
+        <h1>REGISTER</h1>
+    </div></p>
+    
+    <div class="card-body">
+        <form method="POST">
+            {% csrf_token %}
+            <label>{{form.username.label}}</label>
+            {{ form.username}}
+            <br>
+            <label>{{form.password1.label}}</label>
+            {{ form.password2}}
+            <br>
+            <label>{{form.password2.label}}</label>
+            {{ form.password2}}
+            <br>
+            <input style="margin-top: 10px;" class="btn btn-outline-secondary"  type="submit" value="Register">
+        </form>
+        <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock content %}

@@ -1,0 +1,17 @@
+asgiref==3.2.7
+Django==3.0.5
+Pillow==7.1.1
+pytz==2019.3
+sqlparse==0.3.1
+
+Zmiana cen(komunikat w koszyku)
+
+Weryfikacja informacji o produktach pod kątem koszyka
+
+Kategorie produktów 16%
+
+Wyszukiwanie produktów (dynamiczne) 8%
+
+Filtr(od do, w przedziale cenowym)
+
+Zarządzanie kontem 8%

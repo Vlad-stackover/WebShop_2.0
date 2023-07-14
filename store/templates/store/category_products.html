@@ -1,0 +1,28 @@
+{% extends 'store/main.html' %}
+{% block content %}
+    <h1>Products in {{ category_name }} category</h1>
+    <form class="d-flex" method="GET" action="{% url 'store' %}">
+        {% csrf_token %}
+        <input class="form-control me-2" type="text" name="search" placeholder="Search by name" value="{{ search_query }}">
+        <button class="btn btn-outline-secondary" type="submit">Search</button>
+    </form>
+    
+    <div class="row">
+    {% for product in products %}
+	<div class="col-lg-4">
+		<img class="thumbnail" src="{{ product.imageURL }}">
+		<div class="box-element product">
+			<h6><strong>{{ product.name }}</strong></h6>
+			<hr>
+
+			<button data-product="{{ product.id }}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+
+			<a class="btn btn-outline-success" href="{% url 'view' %}">View</a>
+			<h4 style="display: inline-block; float: right"><strong>{{ product.price }} zł</strong></h4>
+		</div>
+	</div>
+    {% empty %}
+        <p>No products found in this category.</p>
+    {% endfor %}
+    </div>
+{% endblock content %}

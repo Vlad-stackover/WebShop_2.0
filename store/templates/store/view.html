@@ -1,0 +1,10 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+
+<h1><strong>Cześć {{request.user|title}}</strong></h1>
+
+<br><h1>  Strona w rozbudowie </h1></br>
+
+<a  class="btn btn-outline-dark" href="{% url 'store' %}">&#x2190; Continue Shopping</a>
+{% endblock content %}
