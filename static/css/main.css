@@ -1,16 +1,19 @@
 body{
-    background-color: #eeeeee;
+    /* background-color: #eeeeee; */
+	background-color: #000000;
 }
 
 h1,h2,h3,h4,h5,h6{
-	color:hsl(0, 0%, 30%);
+	color: #B3B3B3;
 }
 
 .box-element{
-	box-shadow:hsl(0, 0%, 80%) 0 0 16px;
-	background-color: #fff;
+	box-shadow: #404040 0 0 16px;
+	/* background-color: #fff; */
+	background-color: #181818;
 	border-radius: 30px 30px 30px 30px;
 	padding: 10px;
+	
 }
 
 .thumbnail{
@@ -147,6 +150,8 @@ h1{
 	display: flex;
 	flex-wrap: wrap;
 	text-align: center;
+	color: #B3B3B3;
+	
 }
 #knopka{
 	margin-top: 5px;
@@ -154,3 +159,4 @@ h1{
 #price{
 	margin-top: 8px;
 }
+
