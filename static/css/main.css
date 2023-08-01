@@ -1,14 +1,15 @@
 body {
-    background-color: #121212;
+    /* background-color: #121212; */
+	background-color: #090a0a;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: #FFFFFF;
+    color: #ececec;
 }
 
 .box-element {
-    box-shadow: #404040 0 0 16px;
-    background-color: #181818;
+    /* box-shadow: #404040 0 0 16px; */
+    background-color: #101010;
     border-radius: 30px;
     padding: 10px;
 }
@@ -16,7 +17,7 @@ h1, h2, h3, h4, h5, h6 {
 .thumbnail {
     width: 100%;
     height: 200px;
-    box-shadow: -1px -3px 5px -2px rgba(214, 214, 214, 1);
+    box-shadow: -1px -3px 5px -2px #404040;
 }
 
 .product {
@@ -36,7 +37,7 @@ h1, h2, h3, h4, h5, h6 {
 #cart-total {
     display: block;
     text-align: center;
-    color: #fff;
+    color: #ececec;
     background-color: #525252;
     width: 20px;
     height: 25px;
@@ -50,6 +51,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn {
     border-radius: 30px;
+}
+
+.row{
+	color: #ececec;
 }
 
 .row-image {
@@ -68,6 +73,7 @@ h1, h2, h3, h4, h5, h6 {
     padding-bottom: 10px;
     margin-bottom: 10px;
     border-bottom: 1px solid #ececec;
+	color: #ececec;
 }
 
 .quantity {
@@ -133,6 +139,7 @@ h1 {
 #right {
     margin-right: 30px;
     margin-top: 12px;
+	margin-left: 5px;
 }
 
 #max_price {
@@ -154,18 +161,28 @@ h1 {
 
 #price {
     margin-top: 8px;
+	margin-right: 10px;
+	color: #ececec;
 }
 
 #usertag{
 	margin-right: 15px;
 }
 
+#paginator-btn{
+	margin-top: 20px;
+	
+
+}
+
+
+
 .header-bar{
 	margin-top: 80px;
 }
 
 .card-body{
-	color: #FFFFFF;
+	color: #ececec;
 	width: 40%;
 	position: relative;
 	margin: auto;
@@ -173,6 +190,10 @@ h1 {
 
 #lgn-btn{
 	margin-top: 30px;
+}
+
+#shipping-info{
+	color: #ececec;
 }
 
 
