@@ -94,6 +94,12 @@ def user_register(request):
 
 
 def store(request):
+    data = cartData(request)
+    cartItems = data['cartItems']
+    order = data['order']
+    items = data['items']
+    product = Product.objects.all()
+
     search_query = request.GET.get('search', '')
     min_price = request.GET.get('min_price')
     max_price = request.GET.get('max_price')
@@ -114,7 +120,8 @@ def store(request):
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
-    context = {'products': page_obj, 'search_query': search_query}
+
+    context = {'products': page_obj, 'search_query': search_query,'items':items, 'order':order, 'cartItems':cartItems}
     return render(request, 'store/store.html', context)
 
 
