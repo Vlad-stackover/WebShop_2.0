@@ -12,8 +12,12 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 
 def category_products(request, category_name):
+    data = cartData(request)
+    cartItems = data['cartItems']
+    order = data['order']
+    items = data['items']
     products = Product.objects.filter(category=category_name)
-    context = {'products': products}
+    context = {'products': products,'items':items, 'order':order, 'cartItems':cartItems}
     return render(request, 'store/category_products.html', context)
 
 
@@ -29,6 +33,11 @@ def view(request):
 
 
 def search(request, category_name=None):
+    data = cartData(request)
+    cartItems = data['cartItems']
+    order = data['order']
+    items = data['items']
+
     form = SearchForm(request.GET)
     results = []
 
@@ -40,6 +49,7 @@ def search(request, category_name=None):
 
         # Perform the search based on the provided criteria
         queryset = Product.objects.all()
+        queryset.sort()
 
         if name:
             queryset = queryset.filter(name__icontains=name)
@@ -59,7 +69,7 @@ def search(request, category_name=None):
 
         results = queryset.order_by('name')
 
-    context = {'results': results, 'form': form}
+    context = {'results': results, 'form': form, 'items':items, 'order':order, 'cartItems':cartItems}
     return render(request, 'search.html', context)
 
 
@@ -98,7 +108,7 @@ def store(request):
     cartItems = data['cartItems']
     order = data['order']
     items = data['items']
-    product = Product.objects.all()
+    # product = Product.objects.all() MAYBE YOU SHOULD ALLOW THIS LINE
 
     search_query = request.GET.get('search', '')
     min_price = request.GET.get('min_price')
