@@ -8,10 +8,10 @@
 	<input class="form-control me-2" type="text" name="search" placeholder="Search by name" value="{{ search_query }}">
 	<label id="price" for="min_price">Min Price:</label> 
    	<input class="form-control me-2" placeholder="0" type="number" id="min_price" name="min_price" value="{{ request.GET.min_price }}">
-	<h6 id="right">ZŁ</h6>
+	<h6 id="right">$</h6>
     <label id="price" for="max_price">Max Price:</label> 
     <input class="form-control me-2" placeholder="9999" type="number" id="max_price" name="max_price" value="{{ request.GET.max_price }}"> 
-	<h6 id="right">ZŁ</h6>
+	<h6 id="right">$</h6>
     <button class="btn btn-outline-secondary" id="knopka" type="submit">Search</button>
 
 	
