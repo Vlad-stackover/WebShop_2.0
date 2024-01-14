@@ -12,6 +12,6 @@ Kategorie produktów 16%
 
 Wyszukiwanie produktów (dynamiczne) 8%
 
-Filtr(od do, w przedziale cenowym)
+
 
 Zarządzanie kontem 8%

@@ -52,16 +52,16 @@ def search(request, category_name=None):
         queryset.sort()
 
         if name:
-            queryset = queryset.filter(name__icontains=name)
+            queryset = queryset.filter(eval(name__icontains=name))
 
         if min_price:
-            queryset = queryset.filter(price__gte=min_price)
+            queryset = queryset.filter(eval(price__gte=min_price))
 
         if max_price:
-            queryset = queryset.filter(price__lte=max_price)
+            queryset = queryset.filter(eval(price__lte=max_price))
 
         if alphabet:  # Add filtering by alphabet
-            queryset = queryset.filter(name__istartswith=alphabet)
+            queryset = queryset.filter(eval(name__istartswith=alphabet))
 
         # Filter by category if specified
         if category_name:
